@@ -75,7 +75,7 @@ public class Planet {
             if(Planetlist[i].equals(this)){
                 continue;
             }
-            Fnety += this.calcForceExertedByX(Planetlist[i]);
+            Fnety += this.calcForceExertedByY(Planetlist[i]);
         }
         return Fnety;
     }
