@@ -67,7 +67,7 @@ public class NBody {
             /** Call update on each of the planets. This will update each planet’s position, velocity, and acceleration. */
             int count2 = 0;
             for (Planet i : planetlist) {
-                i.update(time, xForces[count2], yForces[count2]);
+                i.update(dt, xForces[count2], yForces[count2]);
                 count2 += 1;
             }
 
