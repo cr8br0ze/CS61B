@@ -67,7 +67,7 @@ public class IntListTest {
     }
 
     @Test
-    public void testReverse(){
+    public void testReverse() {
         //Test 1
         IntList A = IntList.of(1, 2, 3);
         IntList exp = IntList.of(3, 2, 1);
