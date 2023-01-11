@@ -50,25 +50,22 @@ public class NBody {
         int number = in.readInt();
         /** Create a time variable and set it to 0 */
         double time = 0;
-        while (time <= T){
+
+        while(time < T){
 
             /** Create an xForces array and yForces array */
-            double[] xForces = new double[number];
-            double[] yForces = new double[number];
+            double[] xForces = new double[planetlist.length];
+            double[] yForces = new double[planetlist.length];
 
             /** Calculate the net x and y forces for each planet, storing these in the xForces and yForces arrays respectively */
-            int count = 0;
-            for (Planet i : planetlist) {
-                xForces[count] = i.calcNetForceExertedByX(planetlist);
-                yForces[count] = i.calcNetForceExertedByX(planetlist);
-                count += 1;
+            for (int i = 0; i < planetlist.length; i++) {
+                xForces[i] = planetlist[i].calcNetForceExertedByX(planetlist);
+                yForces[i] = planetlist[i].calcNetForceExertedByY(planetlist);
             }
 
             /** Call update on each of the planets. This will update each planet’s position, velocity, and acceleration. */
-            int count2 = 0;
-            for (Planet i : planetlist) {
-                i.update(dt, xForces[count2], yForces[count2]);
-                count2 += 1;
+            for (int i = 0; i <planetlist.length; i++ ) {
+                planetlist[i].update(dt, xForces[i], yForces[i]);
             }
 
             /** Draw the background image */
