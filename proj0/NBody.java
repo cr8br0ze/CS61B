@@ -81,7 +81,7 @@ public class NBody {
 
             /** Pause the animation for 10 milliseconds */
             StdDraw.pause(10);
-
+            //clear
             /** Increase your time variable by dt */
             time += dt;
         }
